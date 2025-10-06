@@ -36,12 +36,11 @@
         <div>Bot</div><div id="bot">-</div>
         <div>Owner</div><div id="owner">-</div>
       </div>
-      <footer>Halaman ini membaca <code>status.json</code>. Jika tidak diperbarui dalam 10 menit, status dianggap Offline.</footer>
     </div>
   </div>
   <script>
     const STATUS_URL = 'status.json'; // relatif terhadap halaman ini
-    const THRESH_MS = 10 * 60 * 1000; // 10 menit
+    const THRESH_MS = 1 * 60 * 1000; // 1 menit
 
     function fmtAgo(ms){
       const s = Math.floor(ms/1000); if (s<60) return `${s}s`; const m=Math.floor(s/60); if (m<60) return `${m}m`; const h=Math.floor(m/60); return `${h}h ${m%60}m`; }
@@ -76,7 +75,7 @@
       }
     }
     refresh();
-    setInterval(refresh, 15000);
+    setInterval(refresh, 60000);
   </script>
 </body>
 </html>
