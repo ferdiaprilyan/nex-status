@@ -1,10 +1,7 @@
 {
   "ok": true,
-  "ts": 1759740248,
-  "uptime": 0,
-  "started_at": 1759740248,
-  "hostname": "penguin",
+  "ts": 1759740527,
+  "started_at": 1759740527,
   "version": "nex - 6.8.6 - Jupiter",
-  "bot": "superuserlinebot",
-  "owner": 6045134280
+  "bot": "superuserlinebot"
 }
