@@ -12,8 +12,10 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <h1 class="title">NEX - Userbot</h1>
-      <div class="row"><span id="status" class="pill">Memuat…</span><span id="ago" class="muted"></span></div>
+      <div class="row head">
+        <h1 class="title">NEX - Userbot</h1>
+        <span id="status" class="pill">Memuat…</span>
+      </div>
       <div class="kv">
         <div>Terakhir</div><div id="last">-</div>
         <div>Versi</div><div id="versi">-</div>
@@ -42,7 +44,6 @@
         const $s = document.getElementById('status');
         $s.className='pill '+(online?'ok':'bad');
         $s.textContent = online ? 'Online' : 'Offline';
-        document.getElementById('ago').textContent = online ? `(update ${fmtAgo(diff)} lalu)` : `(terakhir ${fmtAgo(diff)} lalu)`;
         document.getElementById('last').textContent = fmtTime(j.ts||0);
         document.getElementById('versi').textContent = j.version || '-';
         document.getElementById('bot').textContent = j.bot || '-';
@@ -50,7 +51,6 @@
         const $s = document.getElementById('status');
         $s.className='pill bad';
         $s.textContent='Offline';
-        document.getElementById('ago').textContent = '(status.json tidak terbaca)';
       }
     }
     refresh();
