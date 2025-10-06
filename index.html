@@ -62,7 +62,8 @@
         $s.textContent = online ? 'Online' : 'Offline';
         document.getElementById('ago').textContent = online ? `(update ${fmtAgo(diff)} lalu)` : `(terakhir ${fmtAgo(diff)} lalu)`;
         document.getElementById('last').textContent = fmtTime(j.ts||0);
-        document.getElementById('uptime').textContent = fmtUptime(j.uptime||0);
+        const up = (j.started_at && j.ts) ? Math.max(0, Number(j.ts) - Number(j.started_at)) : Number(j.uptime||0);
+        document.getElementById('uptime').textContent = fmtUptime(up);
         document.getElementById('host').textContent = j.hostname || '-';
         document.getElementById('versi').textContent = j.version || '-';
         document.getElementById('bot').textContent = j.bot || '-';
@@ -79,4 +80,3 @@
   </script>
 </body>
 <\/html>
-
